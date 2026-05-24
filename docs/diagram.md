@@ -5,15 +5,25 @@ tc-pillarpage-templates/
 ├── README.md
 ├── docs/
 │   └── diagram.md                                    # This file
-├── cloned-pages/                                     # Raw HTTrack output (reference only, do not edit)
+│
+├── cloned-pages/                                     # Raw HTTrack output — reference only, do not edit
 │   ├── home/
+│   │   └── index.html
 │   ├── services/
+│   │   └── index.html
 │   ├── services-primary-care/
+│   │   └── index.html
 │   ├── locations/
+│   │   └── index.html
 │   ├── location-truecare-carlsbad/
+│   │   └── index.html
 │   ├── resources/
+│   │   └── index.html
 │   ├── about/
+│   │   └── index.html
 │   └── schedule-an-appointment/
+│       └── index.html
+│
 ├── html-templates/                                   # Cleaned, standalone HTML/CSS templates
 │   ├── home/
 │   │   ├── index.html
@@ -23,25 +33,26 @@ tc-pillarpage-templates/
 │   │       └── images/
 │   ├── services/
 │   │   ├── index.html
-│   │   └── assets/ ...
+│   │   └── assets/ { css/, js/, images/ }
 │   ├── services-primary-care/
 │   │   ├── index.html
-│   │   └── assets/ ...
+│   │   └── assets/ { css/, js/, images/ }
 │   ├── locations/
 │   │   ├── index.html
-│   │   └── assets/ ...
+│   │   └── assets/ { css/, js/, images/ }
 │   ├── location-truecare-carlsbad/
 │   │   ├── index.html
-│   │   └── assets/ ...
+│   │   └── assets/ { css/, js/, images/ }
 │   ├── resources/
 │   │   ├── index.html
-│   │   └── assets/ ...
+│   │   └── assets/ { css/, js/, images/ }
 │   ├── about/
 │   │   ├── index.html
-│   │   └── assets/ ...
+│   │   └── assets/ { css/, js/, images/ }
 │   └── schedule-an-appointment/
 │       ├── index.html
-│       └── assets/ ...
+│       └── assets/ { css/, js/, images/ }
+│
 └── elementor-templates/                              # Elementor JSON exports, ready to import
     ├── home/
     │   └── home.json
