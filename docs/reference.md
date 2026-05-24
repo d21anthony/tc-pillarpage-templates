@@ -241,23 +241,16 @@ Values are clamped to [0, 1]. This preserves the same relative lightness/darknes
 
 ## Pages — Cleanup Status
 
-| Page | Source Reviewed | Copied to html-templates | CSS Localized | Fonts Localized | SVGs Localized | Scripts Stripped | Clean Version | Working Version | Notes |
-|------|:--------------:|:------------------------:|:-------------:|:---------------:|:--------------:|:----------------:|:-------------:|:---------------:|-------|
-| home | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | GF form replacement pending |
-| services | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| services-primary-care | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| locations | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| location-truecare-carlsbad | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| resources | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| about | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| schedule-an-appointment | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
-| services | ⬜ | ⬜ | ⬜ | ⬜ | |
-| services-primary-care | ⬜ | ⬜ | ⬜ | ⬜ | |
-| locations | ⬜ | ⬜ | ⬜ | ⬜ | |
-| location-truecare-carlsbad | ⬜ | ⬜ | ⬜ | ⬜ | |
-| resources | ⬜ | ⬜ | ⬜ | ⬜ | |
-| about | ⬜ | ⬜ | ⬜ | ⬜ | |
-| schedule-an-appointment | ⬜ | ⬜ | ⬜ | ⬜ | |
+| Page | Source Reviewed | Copied to html-templates | CSS Localized | Fonts Localized | SVGs Localized | Scripts Stripped | Clean Version | Working Version | Colors Swapped | Notes |
+|------|:--------------:|:------------------------:|:-------------:|:---------------:|:--------------:|:----------------:|:-------------:|:---------------:|:--------------:|-------|
+| home | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | GF forms replaced with plain HTML; all 3 brand color families swapped |
+| services | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+| services-primary-care | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+| locations | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+| location-truecare-carlsbad | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+| resources | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+| about | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+| schedule-an-appointment | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
 
 ---
 
@@ -277,3 +270,9 @@ Values are clamped to [0, 1]. This preserves the same relative lightness/darknes
 | 2026-05-24 | Download SVG icons to `assets/images/` and patch `/wp-content/uploads/` paths in CSS | Root-relative SVG background-image paths rendered as broken blobs locally |
 | 2026-05-24 | Keep clean `index.html` frozen; all further modifications go in `index.working.html` | Preserves a verified-correct reference point for each page |
 | 2026-05-24 | Add `home-overrides.css` loaded only by `index.working.html` | Scopes working-phase CSS changes so they cannot affect the clean reference file |
+| 2026-05-24 | Replace Gravity Forms newsletter forms (2 instances) with plain HTML `<form>` | GF requires live WP backend; plain HTML gives visual fidelity in prototype |
+| 2026-05-24 | Remove all GF JS from footer of `index.working.html` | jquery.json, gravityforms.min, placeholders, utils, vendor-theme, scripts-theme, gform configs, Akismet — none needed without GF backend |
+| 2026-05-24 | Swap TrueCare pink `#e41b7a` + 7 shade variants → `#ff1980` family | New brand primary pink; full shade family replaced using additive HSL delta method |
+| 2026-05-24 | Swap TrueCare teal `#1b989a` + 11 shade variants → `#5dadec` family | New brand primary blue; all inline `<style>` blocks and CSS file updated |
+| 2026-05-24 | Swap TrueCare orange `#f98909` + 6 shade variants → `#a819ff` family | Purple chosen as third brand accent; proportional shade mapping applied |
+| 2026-05-24 | Always scan both CSS files and HTML source for hex variants before declaring a color family done | Divi stores many colors in inline `<style>` blocks, not only external CSS — found 7+ missed teal variants and 7 missed pink variants this way |
