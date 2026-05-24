@@ -1,0 +1,13 @@
+/*
+ * home-overrides.css
+ *
+ * Scoped overrides for html-templates/home/index.working.html ONLY.
+ * The clean reference file (index.html) does NOT load this stylesheet.
+ *
+ * Use this file for:
+ *   - Layout adjustments needed during the working/modification phase
+ *   - Gravity Forms → plain HTML form styling
+ *   - Any visual tweaks before converting to Elementor JSON
+ *
+ * Loaded LAST in index.working.html so rules here take priority.
+ */
