@@ -6,8 +6,32 @@
  *
  * Use this file for:
  *   - Layout adjustments needed during the working/modification phase
- *   - Gravity Forms → plain HTML form styling
+ *   - Plain HTML form styling (replacing Gravity Forms)
  *   - Any visual tweaks before converting to Elementor JSON
  *
  * Loaded LAST in index.working.html so rules here take priority.
  */
+
+/* ==========================================================================
+   Newsletter form — plain HTML replacement for Gravity Forms
+   Replicates the rules that truecare-theme.css targets via
+   `.gform_wrapper .newsletter input[...]` (which no longer applies
+   since the GF wrapper is gone).
+   ========================================================================== */
+
+.newsletter input[type="email"] {
+    text-align: left;
+    padding: 0 20px !important;
+    border-radius: 20px 0 0 20px;
+    color: #3b3b3b;
+    font-weight: 400;
+    font-size: 16px !important;
+    line-height: 1em !important;
+    margin-top: 0;
+    font-family: 'Mulish', Helvetica, Arial, Lucida, sans-serif !important;
+    min-height: 50px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+}
+
