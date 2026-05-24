@@ -114,7 +114,7 @@ Remove in this order (do not remove anything not listed without discussion):
 |------|-----------|---------|
 | Primary pink | `#ff1980` | `#e41b7a` |
 | Primary blue | `#5dadec` | `#1b989a` (teal) |
-| Orange | TBD | `#f98909` |
+| Orange → Purple | `#a819ff` | `#f98909` |
 
 ### Color Swap Methodology (additive HSL delta)
 
@@ -160,21 +160,17 @@ Values are clamped to [0, 1]. This preserves the same relative lightness/darknes
 | `#19989a` | `#59aced` | 1 | Near-base teal |
 | `#1a989a` | `#5bacec` | 1 | Near-base teal |
 
-### Orange Shade Map (pending — awaiting new brand color)
+### Orange → Purple `#a819ff` Complete Shade Map
 
-Original TrueCare orange family found in home page:
-
-| Value | Count | Notes |
-|-------|-------|-------|
-| `#f98909` | — | Base orange (social share icons, CSS) |
-| `#f88807` | 7 | Near-base orange |
-| `#f6891e` | 2 | Warm orange |
-| `#f99625` | 1 | Slightly lighter |
-| `#f68920` | 1 | Warm orange |
-| `#f6891d` | 1 | Warm orange |
-| `#f98907` | 1 | Near-base orange |
-
-> Once a new orange is chosen, apply additive HSL delta mapping using `#f98909` as the base.
+| Original (TrueCare) | New (Template) | Notes |
+|---------------------|----------------|-------|
+| `#f98909` | `#a819ff` | Base orange → base purple |
+| `#f88807` | `#a616fe` | Near-base, slightly darker |
+| `#f6891e` | `#ae2efb` | Warm orange → slightly lighter purple |
+| `#f99625` | `#b235fe` | Lighter orange → lighter purple |
+| `#f68920` | `#ae30fb` | Warm orange variant |
+| `#f6891d` | `#ad2dfb` | Warm orange variant |
+| `#f98907` | `#a717ff` | Near-base orange |
 
 ---
 
