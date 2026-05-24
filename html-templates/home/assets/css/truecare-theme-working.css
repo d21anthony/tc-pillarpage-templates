@@ -193,7 +193,7 @@ box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.35);
 
 .fa-play-circle-o {font-size:50px;}
 
-.et_pb_menu .et_pb_menu__search-input {border:1px solid #5eb4b1; width:30%;padding:8px;}
+.et_pb_menu .et_pb_menu__search-input {border:1px solid #bfd5e6; width:30%;padding:8px;}
 
 .search-results h2 a {font-family:forma, sans-serif !important; font-style:normal; font-weight:400;}
 .search-results h2.entry-title a:hover {color:#5dadec !important;}
@@ -249,7 +249,7 @@ ol li {line-height:1.6em;}
 }
 .et_pb_post_content ul li::before {
   content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #e21c79; /* Change the color */
+  color: #fd197f; /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
@@ -263,7 +263,7 @@ ol li {line-height:1.6em;}
 
 .et_pb_post_content ol li:before {
 	content: counter(list) ".";
-	color: #e21c79;
+	color: #fd197f;
 	font-weight:bold;
 	    display: inline-block;
     width: 1em;
@@ -371,7 +371,7 @@ background-color:#ffffff;
 .et_pb_menu .et_pb_menu__menu>nav>ul>li>ul {left:auto !important;}
 .nav li li ul {left:auto !important; /* Use the same size as above */}
 .et-menu li li a {width: 100%; /* Make this 40 less then the width of the dropdown menu */}
-.et_pb_menu__icon.et_pb_menu__search-button {padding:0 20px;color:#e21c79 !important;font-weight:700;}
+.et_pb_menu__icon.et_pb_menu__search-button {padding:0 20px;color:#fd197f !important;font-weight:700;}
 
 /* when mobile menu is open, change hamburger icon to x icon */
 .et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar::before {
@@ -647,7 +647,7 @@ option:focus:-ms-input-placeholder { color:transparent  !important; } /* IE 10+ 
 #location-search .location-list ul {list-style:none;margin:0;padding:0;}
 #location-search .location-list ul li {padding-bottom:4px;}
 #location-search .location-list ul li a {color:#5dadec !important;}
-#location-search .location-list ul li a:hover {color:#e21c79 !important;}
+#location-search .location-list ul li a:hover {color:#fd197f !important;}
 #location-search .fa-chevron-right {font-size:14px; color:#f98909;}
 #location-search .et_pb_button{text-align:left;}
 
@@ -660,7 +660,7 @@ option:focus:-ms-input-placeholder { color:transparent  !important; } /* IE 10+ 
 .location-list ul {list-style:none;margin:0;padding:0;}
 .location-list ul li {padding-bottom:6px;}
 .location-dir p {padding-bottom:0px !important;}
-.location-dir a {font-weight:600 !important; color:#e21c79 !important;}
+.location-dir a {font-weight:600 !important; color:#fd197f !important;}
 .location-dir a:hover {color:#5dadec !important;}
 .location-list ul li{list-style-type:none !important;}
 
@@ -713,7 +713,7 @@ box-shadow: none;
 
 #patient-articles p {margin-bottom:0;padding-bottom:10px;}
 .pat-art-title p{padding-bottom:0 !important;margin-bottom:0 !important;}
-.pat-art-title a{font-weight:400;color:#e21c79;}
+.pat-art-title a{font-weight:400;color:#fd197f;}
 .pat-art-title a:hover{color:#5dadec;}
 
 #patient-menu .et_mobile_nav_menu{display:none !important;}
@@ -803,14 +803,14 @@ margin-top:20px;}
 .footer-p2-c .et_pb_button{width:100%;min-width:100%;}
 
 .p2-top-callout-bar a{background-color:#f98909;color:#ffffff;margin-left:10px;padding:10px 15px;border-radius:10px;}
-  .p2-top-callout-bar a:hover{background-color:#e21c79 ;color:#ffffff;}
+  .p2-top-callout-bar a:hover{background-color:#fd197f ;color:#ffffff;}
   #top-pink{z-index:999999 !important;}
   #top-pink .wpml-ls-legacy-dropdown{
     width: auto;
     max-width: 100%;
     float: none !important;}
   #top-pink .wpml-ls-legacy-dropdown a.wpml-ls-item-toggle{
-    background-color: #e21c79;
+    background-color: #fd197f;
     border: 0;
     border-radius: 0;
     padding:6px 25px 4px 0;
@@ -819,7 +819,7 @@ margin-top:20px;}
   #top-pink .wpml-ls-legacy-dropdown .wpml-ls-sub-menu a{
     padding:10px 20px 10px;
     border-radius: 0px;
-    background-color: #e21c79;
+    background-color: #fd197f;
 	border:0;  
   }
 
@@ -843,7 +843,7 @@ margin-top:20px;}
     filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.4));
   }
   .home-header-btn-p2 a:hover{
-   	background-color: #e21c79;
+   	background-color: #fd197f;
   }
   
   .home-select-p2 .et-menu a {width:100%;}
@@ -894,7 +894,7 @@ margin-top:20px;}
 .video-library-menu .et-menu .menu-item-has-children>a:first-child:after{content:"\43";right:-8px;}
 
   #home-services-links a{font-weight:500 !important;}
-  #home-services-links .fa-chevron-right{color: #e21c79; font-size: 17px;}
+  #home-services-links .fa-chevron-right{color: #fd197f; font-size: 17px;}
   .home-services-links-arrow .fa-chevron-right{float:right;margin-right:20px;}
   /*make the parts of the blog post flexible*/
 .pa-reorder-blog .et_pb_post {
@@ -968,7 +968,7 @@ ul.home-bullet-col {float:left;width:60%;}
 #newsletter-p2 .gform_wrapper div.validation_error {color:#ffffff !important; border-top:2px solid #ffffff !important; border-bottom:2px solid #ffffff !important;font-size:18px !important;}
 #newsletter-p2 .gform_wrapper li.gfield.gfield_error {border-top:0 !important; border-bottom:0 !important; background-color:#ffffff !important; padding-top:1px !important;}
 #newsletter-p2 .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {border:1px solid #ffffff !important;}
-#newsletter-p2 .gform_wrapper .validation_message {color:#ffffff !important;background: #e21c79;}
+#newsletter-p2 .gform_wrapper .validation_message {color:#ffffff !important;background: #fd197f;}
 #newsletter-p2 .gform_legacy_markup_wrapper .gform_validation_errors>h2{color:#ffffff !important;}
 
 /*make the Divi mobile dropdown menu scrollable*/
@@ -1051,7 +1051,7 @@ li.dnt {margin-top:0px; margin-right:0 !important;}
 	#footer-nav .et_pb_menu .et_mobile_nav_menu{display:none;}
 	#footer-nav .et_pb_menu .et_pb_menu__menu{display:flex;}
 	#footer-nav .et_pb_menu--style-left_aligned .et_pb_menu__wrap{justify-content: flex-start;}
-	.et_pb_menu .et_pb_menu__search-input {border:1px solid #5eb4b1; width:100%;padding:8px;}
+	.et_pb_menu .et_pb_menu__search-input {border:1px solid #bfd5e6; width:100%;padding:8px;}
 	.et_pb_menu .et_pb_menu__icon{margin-top:4px;display:flex;}
 	.et_pb_menu__icon.et_pb_menu__search-button {}
 	.video-library-menu .et_pb_menu_1_tb_header{float:none;width:80%;margin:auto;}

@@ -91,6 +91,8 @@ Remove in this order (do not remove anything not listed without discussion):
 
 ## Brand Tokens (extracted from home page)
 
+### Original TrueCare Palette
+
 | Token | Value | Usage |
 |-------|-------|-------|
 | Primary teal | `#1b989a` | Links, primary buttons, CTAs |
@@ -105,6 +107,74 @@ Remove in this order (do not remove anything not listed without discussion):
 | H5 size | `23px` | |
 | H6 size | `21px` | |
 | Body font size | `19px` | |
+
+### Working Template Palette (new brand colors)
+
+| Role | New Value | Replaces |
+|------|-----------|---------|
+| Primary pink | `#ff1980` | `#e41b7a` |
+| Primary blue | `#5dadec` | `#1b989a` (teal) |
+| Orange | TBD | `#f98909` |
+
+### Color Swap Methodology (additive HSL delta)
+
+Used for all shade-family replacements. Given a known base pair (original → new), each shade variant is mapped proportionally:
+
+```
+new_shade_H = new_base_H
+new_shade_L = new_base_L + (original_shade_L - original_base_L)
+new_shade_S = new_base_S + (original_shade_S - original_base_S)
+```
+
+Values are clamped to [0, 1]. This preserves the same relative lightness/darkness contrast that the original shade family had.
+
+**Important:** Divi stores many color values in inline `<style>` blocks (not just CSS files). Always scan both the CSS files and the HTML file with `grep -ino "#[0-9a-fA-F]{6}"` to find all variants before declaring a color family "done."
+
+### Pink → `#ff1980` Complete Shade Map
+
+| Original (TrueCare) | New (Template) | Count | Notes |
+|---------------------|----------------|-------|-------|
+| `#e41b7a` | `#ff1980` | 35 (CSS) + 3 (HTML) | Base pink |
+| `#e21c79` | `#fd197f` | 39 | Inline element attributes |
+| `#e98db8` | `#f896c2` | 4 | Light pink |
+| `#bc1f65` | `#eb086e` | 1 | Dark pink |
+| `#cf1a6f` | `#fd0474` | 1 | Mid-dark pink |
+| `#d91875` | `#fe0b78` | 1 | Mid-dark pink |
+| `#e5157b` | `#ff147d` | 1 | Near-base pink |
+| `#f78da7` | `#ff9ec9` | 1 | Very light pink |
+
+### Teal → `#5dadec` Complete Shade Map
+
+| Original (TrueCare) | New (Template) | Count | Notes |
+|---------------------|----------------|-------|-------|
+| `#1b989a` | `#5dadec` | 26 (CSS) | Base teal |
+| `#1d969a` | `#5dadec` | 2 (CSS) | Near-identical to base |
+| `#1e999b` | `#62aeea` | — | Inline style blocks |
+| `#1d979a` | `#60adea` | — | Inline style blocks |
+| `#5eb4b2` | `#bfd5e6` | — | Light teal |
+| `#5eb4b1` | `#bfd5e6` | 2 | Near-identical to above |
+| `#7EBEC5` | `#e2ecf4` | — | Very light teal |
+| `#067982` | `#1d9bff` | — | Darker teal |
+| `#005161` | `#0089f5` | — | Very dark teal |
+| `#106365` | `#2090e8` | — | Dark teal |
+| `#19989a` | `#59aced` | 1 | Near-base teal |
+| `#1a989a` | `#5bacec` | 1 | Near-base teal |
+
+### Orange Shade Map (pending — awaiting new brand color)
+
+Original TrueCare orange family found in home page:
+
+| Value | Count | Notes |
+|-------|-------|-------|
+| `#f98909` | — | Base orange (social share icons, CSS) |
+| `#f88807` | 7 | Near-base orange |
+| `#f6891e` | 2 | Warm orange |
+| `#f99625` | 1 | Slightly lighter |
+| `#f68920` | 1 | Warm orange |
+| `#f6891d` | 1 | Warm orange |
+| `#f98907` | 1 | Near-base orange |
+
+> Once a new orange is chosen, apply additive HSL delta mapping using `#f98909` as the base.
 
 ---
 
