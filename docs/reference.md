@@ -114,7 +114,7 @@ Remove in this order (do not remove anything not listed without discussion):
 |------|-----------|---------|
 | Primary pink | `#ff1980` | `#e41b7a` |
 | Primary blue | `#5dadec` | `#1b989a` (teal) |
-| Orange → Purple | `#a819ff` | `#f98909` |
+| Orange accent | `#ff8c00` | `#f98909` |
 
 ### Color Swap Methodology (additive HSL delta)
 
@@ -160,17 +160,19 @@ Values are clamped to [0, 1]. This preserves the same relative lightness/darknes
 | `#19989a` | `#59aced` | 1 | Near-base teal |
 | `#1a989a` | `#5bacec` | 1 | Near-base teal |
 
-### Orange → Purple `#a819ff` Complete Shade Map
+### Orange → `#ff8c00` Complete Shade Map
 
 | Original (TrueCare) | New (Template) | Notes |
 |---------------------|----------------|-------|
-| `#f98909` | `#a819ff` | Base orange → base purple |
-| `#f88807` | `#a616fe` | Near-base, slightly darker |
-| `#f6891e` | `#ae2efb` | Warm orange → slightly lighter purple |
-| `#f99625` | `#b235fe` | Lighter orange → lighter purple |
-| `#f68920` | `#ae30fb` | Warm orange variant |
-| `#f6891d` | `#ad2dfb` | Warm orange variant |
-| `#f98907` | `#a717ff` | Near-base orange |
+| `#f98909` | `#ff8c00` | Base orange |
+| `#f88807` | `#f98901` | Near-base, slightly darker |
+| `#f6891e` | `#fa9315` | Warm orange variant |
+| `#f99625` | `#fd981c` | Lighter orange |
+| `#f68920` | `#fa9417` | Warm orange variant |
+| `#f6891d` | `#fa9214` | Warm orange variant |
+| `#f98907` | `#fc8a00` | Near-base orange |
+
+> Previous iteration used purple `#a819ff` — replaced with `#ff8c00` orange on 2026-05-25.
 
 ---
 

@@ -19,6 +19,43 @@
    since the GF wrapper is gone).
    ========================================================================== */
 
+/* ==========================================================================
+   Top header bar — mobile adjustments
+   ========================================================================== */
+
+/* Call icon: hidden on desktop, shown on mobile */
+.call-mob { display: none; }
+
+@media only screen and (max-width: 980px) {
+  /* Remove right padding from top bar list */
+  #top-pink .et_pb_text ul {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Swap: hide text link, show icon button */
+  li.appt-text { display: none !important; }
+  li.call-mob  { display: inline-flex !important; align-items: center; }
+
+  /* Call icon button */
+  a.top-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #5dadec;
+    color: #fff !important;
+    text-decoration: none;
+  }
+  a.top-call:hover { background-color: #ff8c00; }
+}
+
+/* ==========================================================================
+   Newsletter form — plain HTML replacement for Gravity Forms
+   ========================================================================== */
+
 .newsletter input[type="email"] {
     text-align: left;
     padding: 0 20px !important;
