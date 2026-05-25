@@ -108,7 +108,7 @@ input[type="checkbox"]:checked+.CybotCookiebotDialogBodyLevelButtonSlider::after
 /*# sourceURL=global-styles-inline-css */
 </style>
 <link rel="stylesheet" id="mediaelement" href="assets/css/mediaelement.min.css"><link rel="stylesheet" id="wp-mediaelement" href="assets/css/wp-mediaelement.min.css"><link rel="stylesheet" id="gform_basic" href="assets/css/gravityforms-basic.min.css"><link rel="stylesheet" id="gform_theme_components" href="assets/css/gravityforms-theme-components.min.css"><link rel="stylesheet" id="gform_theme" href="assets/css/gravityforms-theme.min.css">
-<link rel="stylesheet" href="assets/css/home-overrides.css">
+<link rel="stylesheet" href="assets/css/home-overrides.css?v=3">
 </head>
 <body class="home wp-singular page-template-default page page-id-31254 wp-theme-Divi wp-child-theme-truecare et-tb-has-template et-tb-has-header et-tb-has-footer tribe-no-js et_bloom et_monarch et_pb_button_helper_class et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_smooth_scroll et_no_sidebar et_divi_theme et-db">
 	<div id="page-container">
@@ -137,7 +137,8 @@ input[type="checkbox"]:checked+.CybotCookiebotDialogBodyLevelButtonSlider::after
 				<div class="et_pb_text_inner"><ul>
 <li class="appt-text"><a href="https://truecare.org/contact-truecare/" title="Appointment Call">Appt. Call</a> / Text: <a href="tel:7607366767" title="Text Number">(760) 736-6767</a></li>
 <li class="call-mob"><a href="tel:7607366767" class="top-call" aria-label="Call us"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></a></li>
-<li class="sched-mob"><a href="schedule-an-appointment/index.html" title="Schedule an Appointment" class="top-sched">Schedule an Appointment</a></li>
+<li class="call-now-mob"><a href="tel:7607366767" class="top-call-btn">Call Now</a></li>
+<li class="sched-mob"><a href="schedule-an-appointment/index.html" title="Schedule Appointment" class="top-sched">Schedule Appointment</a></li>
 </ul></div>
 			</div>
 			</div>
@@ -148,7 +149,19 @@ input[type="checkbox"]:checked+.CybotCookiebotDialogBodyLevelButtonSlider::after
 			</div>
 				
 				
-			</div><div id="header-menu-bar-p2" class="et_pb_section et_pb_section_3_tb_header et_pb_sticky_module et_pb_with_background et_section_regular et_pb_section--with-menu" >
+			</div><script>
+/* Defeat Divi sticky JS on mobile — runs synchronously before any deferred script */
+(function(){
+  if(!window.matchMedia('(max-width:668px)').matches) return;
+  var el=document.getElementById('top-pink');
+  if(!el) return;
+  el.classList.remove('et_pb_sticky_module');
+  el.style.setProperty('display','none','important');
+  new MutationObserver(function(){
+    if(el.style.display!=='none') el.style.setProperty('display','none','important');
+  }).observe(el,{attributes:true,attributeFilter:['style','class']});
+}());
+</script><div id="header-menu-bar-p2" class="et_pb_section et_pb_section_3_tb_header et_pb_sticky_module et_pb_with_background et_section_regular et_pb_section--with-menu" >
 				
 				
 				
@@ -2532,4 +2545,31 @@ var et_pb_sticky_elements = {"et_pb_section_1_tb_header":{"id":"et_pb_section_1_
             applyInstantSearchFilter();
         });
         </script>
+
+<!-- ===== Mobile sticky bottom CTA bar (hidden on desktop via CSS) ===== -->
+<div id="mobile-cta-bar">
+  <a href="tel:7607366767" class="mcta-btn mcta-call">
+    <i class="fas fa-phone"></i>
+    <span>Call Now</span>
+  </a>
+  <a href="schedule-an-appointment/index.html" class="mcta-btn mcta-schedule">
+    <i class="fas fa-calendar-alt"></i>
+    <span>Schedule Appointment</span>
+  </a>
+</div>
+
+<script>
+/* JS fallback: force mobile CTA bar on mobile viewports */
+(function(){
+  var bar=document.getElementById('mobile-cta-bar');
+  if(!bar||!window.matchMedia('(max-width:668px)').matches) return;
+  bar.style.cssText='display:flex!important;visibility:visible!important;pointer-events:auto!important;position:fixed!important;bottom:0!important;left:0!important;right:0!important;z-index:99999!important;background:#fff!important;box-shadow:0 -4px 18px rgba(0,0,0,.18)!important;padding:10px 12px!important;gap:10px!important;';
+  bar.querySelectorAll('.mcta-btn').forEach(function(b){
+    b.style.cssText='flex:1;display:flex!important;align-items:center;justify-content:center;gap:8px;padding:13px 12px;border-radius:50px;font-weight:700;font-size:15px;color:#fff!important;text-decoration:none!important;white-space:nowrap;';
+  });
+  var c=bar.querySelector('.mcta-call');   if(c) c.style.backgroundColor='#5dadec';
+  var s=bar.querySelector('.mcta-schedule');if(s) s.style.backgroundColor='#f98909';
+}());
+</script>
+
 </html>

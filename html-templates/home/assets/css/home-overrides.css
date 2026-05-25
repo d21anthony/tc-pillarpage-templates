@@ -23,21 +23,40 @@
    Top header bar — mobile adjustments
    ========================================================================== */
 
-/* Call icon: hidden on desktop, shown on mobile */
-.call-mob { display: none; }
+/* Hidden on desktop — only shown in mobile media query below */
+.call-mob     { display: none; }
+.call-now-mob { display: none; }
+
+/* Bottom bar: always flex but off-screen/invisible on desktop.
+   Avoids display:none→flex cascade conflict with media queries. */
+#mobile-cta-bar {
+  display: flex;
+  position: fixed;
+  bottom: -200px;        /* off-screen on desktop */
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  visibility: hidden;    /* non-interactive on desktop */
+  pointer-events: none;
+  background: #ffffff;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.18);
+  padding: 10px 12px;
+  gap: 10px;
+  transition: none;
+}
 
 @media only screen and (max-width: 980px) {
-  /* Remove right padding from top bar list */
+  /* Remove padding from top bar list on tablet */
   #top-pink .et_pb_text ul {
     padding: 0 !important;
     margin: 0 !important;
   }
 
-  /* Swap: hide text link, show icon button */
+  /* Hide text link on tablet — icon handles it */
   li.appt-text { display: none !important; }
   li.call-mob  { display: inline-flex !important; align-items: center; }
 
-  /* Call icon button */
+  /* Call icon button (tablet) */
   a.top-call {
     display: inline-flex;
     align-items: center;
@@ -50,6 +69,58 @@
     text-decoration: none;
   }
   a.top-call:hover { background-color: #ff8c00; }
+}
+
+/* ==========================================================================
+   Mobile phone (≤668px): hide top bar, show sticky bottom CTA bar
+   ========================================================================== */
+@media only screen and (max-width: 668px) {
+
+  /* Hide the top pink bar entirely — target both the original element and any
+     Divi sticky clone (et_pb_sticky_module JS clones the node without the id) */
+  #top-pink,
+  .et_pb_section_1_tb_header { display: none !important; }
+
+  /* Cancel the 45px sticky-top offset Divi sets for the menu bar
+     (it offset to clear #top-pink, which we now hide on mobile) */
+  #header-menu-bar-p2.et_pb_sticky--top { top: 0 !important; }
+
+  /* Add breathing room so page content clears the bar */
+  body { padding-bottom: 72px !important; }
+
+  /* ---- Sticky bar container — slide up into view ---- */
+  #mobile-cta-bar {
+    bottom: 0;
+    visibility: visible;
+    pointer-events: auto;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  /* ---- Shared pill button styles ---- */
+  .mcta-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 12px;
+    border-radius: 50px;
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: filter 0.2s ease;
+  }
+  .mcta-btn:hover { filter: brightness(0.9); }
+
+  /* ---- Call Now — light blue ---- */
+  .mcta-call { background-color: #5dadec; }
+
+  /* ---- Schedule Appointment — orange ---- */
+  .mcta-schedule { background-color: #f98909; }
+
 }
 
 /* ==========================================================================
